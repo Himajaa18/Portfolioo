@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himaja Challagolusula | Portfolio</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+     <style>/* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+        
+        /* Navigation Bar */
+        nav {
+            background: #333;
+            color: #80e4e9;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav h1 {
+            display: inline;
+            margin-left: 10px;
+            font-weight: bold;
+            color: #ffd700;
+        }
+        
+        nav ul {
+            list-style: none;
+            float: right;
+        }
+        
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        nav ul li a:hover {
+            color: #ffd700;
+        }
+        
+        /* Hero Section */
+        header {
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: #fff;
+            text-align: center;
+            padding: 80px 20px;
+            margin-top: 50px;
+        }
+        
+        header h1 {
+            font-size: 3rem;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+        }
+        
+        header .btn {
+            background: #ffd700;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+        }
+        
+        header .btn:hover {
+            background: #e6c200;
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        
+        .bg-light {
+            background: #f4f4f9;
+        }
+        
+        /* About Section */
+        #about p {
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        #about .btn {
+            background-color: #4facfe;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+        }
+        
+        #about .btn:hover {
+            background-color: #00f2fe;
+        }
+        
+        /* Skills Section */
+        .skills-grid {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .skill {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            width: 200px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .skill:hover {
+            transform: translateY(-10px);
+        }
+        
+        .skill i {
+            font-size: 3rem;
+            color: #ffd700;
+        }
+        
+        .skill h4 {
+            font-size: 1.3rem;
+            margin: 10px 0;
+        }
+        
+        .skill p {
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        /* Projects Section */
+        .projects-grid {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .project-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-card h3 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+        
+        .project-card p {
+            font-size: 1rem;
+            color: #666;
+            margin: 10px 0;
+        }
+        
+        .project-link {
+            display: inline-block;
+            background: #4facfe;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+        
+        .project-link:hover {
+            background: #00f2fe;
+        }
+        
+        /* Experience Section */
+        .experience-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .experience-card h3 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+        
+        .experience-card p {
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        .experience-card strong {
+            color: #4facfe;
+        }
+        
+        /* Achievements Section */
+        .achievements-grid {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .achievement-card {
+            background: #fff;
+            padding: 20px;
+            width: 250px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .achievement-card h4 {
+            font-size: 1.3rem;
+            color: #333;
+        }
+        
+        .achievement-card p {
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        /* Extracurricular Activities Section */
+        .activities-grid {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .activity-card {
+            background: #fff;
+            padding: 20px;
+            width: 250px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .activity-card h4 {
+            font-size: 1.3rem;
+            color: #333;
+        }
+        
+        .activity-card p {
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        /* Contact Section */
+        #contact p {
+            font-size: 1.2rem;
+            color: #333;
+        }
+        
+        #contact a {
+            color: #4facfe;
+            text-decoration: none;
+        }
+        
+        #contact a:hover {
+            color: #00f2fe;
+        }
+        
+        /* Footer Section */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        footer p {
+            font-size: 1rem;
+            margin: 0;
+        }
+        /* Achievements Section */
+        #achievements .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .achievement-card {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .achievement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .achievement-card h4 {
+            font-size: 1.5rem;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        
+        .achievement-card p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        /* Extracurricular Activities Section */
+        #extracurriculars .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .activity-card {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .activity-card h4 {
+            font-size: 1.5rem;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        
+        .activity-card p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+        #experience .experience-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        
+        #experience .experience-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        #experience .experience-card h3 {
+            font-size: 1.8rem;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        
+        #experience .experience-card p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+    <div class="container">
+        <h1>Himaja Challagolusula</h1>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<header id="home">
+    <div class="hero-container">
+        <h2>Welcome to My Portfolio</h2>
+        <h1>I’m <span class="highlight">Himaja Challagolusula</span></h1>
+        <p>Aspiring Junior Software Developer | Web Developer | Machine Learning Enthusiast</p>
+        <a href="#contact" class="btn">Hire Me</a>
+    </div>
+</header>
+
+<!-- About Section -->
+<section id="about" class="section">
+    <div class="container">
+        <h2>About Me</h2>
+        <p>I am a final-year Computer Science student passionate about technology and innovation. I specialize in web development, machine learning, and full-stack application development. My goal is to create impactful software solutions that solve real-world problems.</p>
+        <a href="https://drive.google.com/file/d/18UxW9Ma8TTMsrap5rZKwNDwrQy5VdAA0/view?usp=sharing" class="btn">Download Resume</a>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="section bg-light">
+    <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill">
+                <i class="fas fa-code"></i>
+                <h4>Programming</h4>
+                <p>C, Java, Python</p>
+            </div>
+            <div class="skill">
+                <i class="fas fa-laptop-code"></i>
+                <h4>Web Development</h4>
+                <p>HTML, CSS, JavaScript</p>
+            </div>
+            <div class="skill">
+                <i class="fas fa-database"></i>
+                <h4>Database Management</h4>
+                <p>SQL, MongoDB</p>
+            </div>
+            <div class="skill">
+                <i class="fas fa-robot"></i>
+                <h4>Machine Learning</h4>
+                <p>Deep Learning, Model Evaluation</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="section">
+    <div class="container">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <h3>🍃 Rice Leaf Disease Detection</h3>
+                <p><strong>Technologies:</strong> VGG16, YOLOv4, Python, TensorFlow, Keras, OpenCV</p>
+                <p>Developed a rice leaf disease detection system using VGG16 for feature extraction and YOLOv4 for object detection. The system helps in accurately identifying and classifying rice leaf diseases, aiding in crop management.</p>
+                <!-- <a href="https://github.com/your-repo-link" target="_blank" class="project-link">View on GitHub</a> -->
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <h3>🚗 Car Price Prediction</h3>
+                <p><strong>Technologies:</strong> Python, Scikit-learn, Pandas, LightGBM, XGBoost, CatBoost</p>
+                <p>Implemented a machine learning model to predict car prices based on features such as brand, mileage, and year. Multiple algorithms were used to ensure optimal accuracy.</p>
+                <a href="https://ieeexplore.ieee.org/document/10677733" target="_blank" class="project-link">View IEEE Paper</a>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <h3>💼 Online Job Portal</h3>
+                <p><strong>Technologies:</strong> Node.js, Express.js, MongoDB, HTML, CSS, JavaScript</p>
+                <p>Built a full-stack web application to facilitate job posting and applications. The portal uses Node.js, Express.js, and MongoDB for the backend, providing a user-friendly experience for job seekers and employers.</p>
+                <!-- <a href="https://github.com/your-repo-link" target="_blank" class="project-link">View on GitHub</a> -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Professional Experience Section -->
+<section id="experience" class="section">
+    <div class="container">
+        <h2>Professional Experience</h2>
+        <div class="experience-card">
+            <h3>Teaching Assistant – Machine Learning</h3>
+            <p><strong>Vignan’s Foundation for Science, Technology and Research</strong>, Vadlamudi | <strong>June 2024 – Present</strong></p>
+            <p>Assisted junior students in understanding machine learning principles. Simplified complex topics and enhanced curriculum delivery, fostering student engagement and improving comprehension.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Achievements & Certifications Section -->
+<section id="achievements" class="section">
+    <div class="container">
+        <h2>Achievements & Certifications</h2>
+        <div class="achievements-grid">
+            <div class="achievement-card">
+                <h4>IEEE Research Paper Presentation</h4>
+                <p>Presented a research paper at an international IEEE conference.</p>
+            </div>
+            <div class="achievement-card">
+                <h4>Cisco Network Essentials</h4>
+                <p>Completed Cisco's Network Essentials Certification, gaining essential networking skills.</p>
+            </div>
+            <div class="achievement-card">
+                <h4>Cambridge English Certifications</h4>
+                <p>Achieved Cambridge University B1 Preliminary English Test (2021) and BEC Vantage.</p>
+            </div>
+            <div class="achievement-card">
+                <h4>Smart Coder Certification</h4>
+                <p>Earned Smart Coder Certification from SmartInterviews, validating programming expertise.</p>
+            </div>
+            <div class="achievement-card">
+                <h4>NPTEL Courses</h4>
+                <p>Completed NPTEL Courses in Leadership & Team Effectiveness and Introduction to IoT.</p>
+            </div>
+            <div class="achievement-card">
+                <h4>Public Speaking Certification</h4>
+                <p>Obtained Public Speaking Certification from Life Skills Course (2023).</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Extracurricular Activities Section
+<section id="extracurriculars" class="section">
+    <div class="container">
+        <h2>Extracurricular Activities</h2>
+        <div class="activities-grid">
+            <div class="activity-card">
+                <h4>Event Coordinator</h4>
+                <p>Managed events for the Fine Arts Team, Quality Management Team, and Student Activity Council.</p>
+            </div>
+            <div class="activity-card">
+                <h4>NSS Coordinator</h4>
+                <p>Organized and led social initiatives, including awareness programs and cleanliness drives.</p>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+
+
+<!-- Contact Section -->
+<section id="contact" class="section">
+    <div class="container">
+        <h2>Contact Me</h2>
+        <p>If you'd like to get in touch, you can contact me through the following:</p>
+        <div>
+            <p><strong>Email:</strong> <a href="mailto:himajayadav18@example.com">himajayadav18@example.com</a></p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/challagolusula-himaja-806204280" target="_blank">Visit my LinkedIn</a></p>
+            <p><strong>Phone:</strong> +91-8019406368</p>
+        </div>
+        
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Himaja Challagolusula. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>// Contact Form Validation
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+    
+        if (name === "" || email === "" || message === "") {
+            alert("All fields are required!");
+        } else {
+            alert("Thank you for your message!");
+        }
+    });
+    </script>
+
+</body>
+</html>
